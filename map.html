@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carte du voyage - undefined</title>
+  <style>
+    body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    #map { height: 100vh; width: 100%; }
+    .info-window { max-width: 250px; font-family: Arial, sans-serif; }
+    .info-window img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 10px; }
+    .info-window h3 { margin: 0 0 5px 0; font-size: 16px; color: #333; }
+    .info-window p { margin: 5px 0; font-size: 14px; color: #666; }
+    .info-window a { color: #1a73e8; text-decoration: none; }
+    .info-window a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  
+  <script>
+    function initMap() {
+      const center = { lat: -23.851671062500003, lng: 35.526071099999996 };
+      const map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: center
+      });
+      
+      const markers = [{"lat":-23.8568821,"lng":35.5480014,"name":"Tofo","jour":1,"titre":"Arrivée au Paradis de Tofo","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-23.8568821,35.5480014&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-23.8568821,35.5480014","aiImageUrl":"jour1.jpg"},{"lat":-23.8568821,"lng":35.5480014,"name":"Tofo (Océan Indien)","jour":3,"titre":"Safari Océanique : à la rencontre des Géants","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-23.8568821,35.5480014&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-23.8568821,35.5480014","aiImageUrl":"jour3.jpg"},{"lat":-23.8568821,"lng":35.5480014,"name":"Tofo (Sites de plongée)","jour":4,"titre":"Plongée sur les Récifs de Manta","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-23.8568821,35.5480014&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-23.8568821,35.5480014","aiImageUrl":"jour4.jpg"},{"lat":-23.8790203,"lng":35.4025048,"name":"Inhambane","jour":5,"titre":"Échappée à Inhambane","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-23.8790203,35.4025048&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-23.8790203,35.4025048","aiImageUrl":"jour5.jpg"},{"lat":-23.8568821,"lng":35.5480014,"name":"Tofinho","jour":6,"titre":"Vagues et Falaises à Tofinho","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-23.8568821,35.5480014&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-23.8568821,35.5480014","aiImageUrl":"jour6.jpg"},{"lat":-23.7930556,"lng":35.5180556,"name":"Praia da Barra","jour":8,"titre":"Lagon et Mangrove de Barra","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-23.7930556,35.5180556&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-23.7930556,35.5180556","aiImageUrl":"jour8.jpg"},{"lat":-23.8568821,"lng":35.5480014,"name":"Arrière-pays de Tofo","jour":10,"titre":"Aventure dans l'Arrière-Pays","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-23.8568821,35.5480014&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-23.8568821,35.5480014","aiImageUrl":"jour10.jpg"},{"lat":-23.8568821,"lng":35.5480014,"name":"Tofo / Inhambane","jour":12,"titre":"Départ de Tofo","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-23.8568821,35.5480014&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-23.8568821,35.5480014","aiImageUrl":"jour12.jpg"}];
+      
+      markers.forEach((markerData) => {
+        const marker = new google.maps.Marker({
+          position: { lat: markerData.lat, lng: markerData.lng },
+          map: map,
+          title: markerData.name,
+          label: String(markerData.jour)
+        });
+        
+        const contentString = `
+          <div class="info-window">
+            <img src="${markerData.streetViewUrl}" alt="Street View de ${markerData.name}" />
+            <h3>Jour ${markerData.jour}</h3>
+            <p><strong>${markerData.name}</strong></p>
+            <p><a href="${markerData.streetViewLinkUrl}" target="_blank" rel="noopener noreferrer"><strong>${markerData.titre}</strong></a></p>
+          </div>
+        `;
+        
+        const infoWindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+        
+        marker.addListener('click', () => {
+          infoWindow.open(map, marker);
+        });
+      });
+    }
+  </script>
+  
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q&callback=initMap">
+  </script>
+</body>
+</html>
