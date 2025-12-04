@@ -1,0 +1,284 @@
+{
+  "pays": "Mozambique",
+  "drapeau": "🇲🇿",
+  "symbole": "🐋",
+  "titre": "Tofo, le Sanctuaire des Géants Marins",
+  "budget": "2600€",
+  "duree": "12 jours",
+  "temps_vol": "Environ 16h à 20h avec escale(s)",
+  "jours": [
+    {
+      "jour": 1,
+      "symbole": "🛬",
+      "titre": "Arrivée au Paradis de Tofo",
+      "legende": "Après un long voyage, vous atterrissez à Inhambane, la porte d'entrée de Tofo. Un court transfert vous mènera à votre lodge où le reste de la journée est consacré à l'installation. Sentez le sable chaud sous vos pieds et imprégnez-vous de l'atmosphère décontractée de ce légendaire village de pêcheurs pour une arrivée tout en douceur.",
+      "lieu": "Tofo",
+      "activites": [
+        "🛬: <strong>Arrivée à l'aéroport d'Inhambane (INH)</strong>: Récupérez vos bagages et passez les formalités d'entrée au Mozambique.",
+        "🚗: <strong>Transfert et installation à Tofo</strong>: Un court trajet en taxi ou en 'chapa' (minibus local) vous mènera à votre hébergement face à l'océan.",
+        "🌅: <strong>Premiers pas sur la plage de Tofo</strong>: Dégourdissez-vous les jambes avec une balade au coucher du soleil pour une première immersion dans la magie des lieux."
+      ],
+      "illustration": "jour1.jpg",
+      "encarts": [
+        {
+          "symbole": "ℹ️",
+          "titre": "À savoir",
+          "texte": "Le visa peut souvent être obtenu à l'arrivée à l'aéroport d'Inhambane, mais vérifiez les conditions avant de partir. Ayez des dollars US ou des Rands sud-africains pour le paiement."
+        }
+      ]
+    },
+    {
+      "jour": 2,
+      "symbole": "🌴",
+      "titre": "Immersion et Saveurs Locales",
+      "legende": "Cette journée est dédiée à l'acclimatation. Explorez le petit marché vibrant de Tofo, goûtez aux saveurs locales et laissez le rythme doux de la vie mozambicaine vous envahir. C'est la manière parfaite de se préparer pour les aventures aquatiques à venir, en découvrant le cœur battant du village.",
+      "lieu": "Tofo",
+      "activites": [
+        "🛍️: <strong>Exploration du marché de Tofo</strong>: Découvrez l'artisanat local, les tissus colorés 'capulanas' et dégustez des fruits tropicaux frais comme la mangue ou l'ananas.",
+        "🍽️: <strong>Déjeuner de fruits de mer frais</strong>: Savourez un plat de crevettes grillées ou de poisson du jour dans l'un des restaurants de plage, les pieds dans le sable."
+      ],
+      "illustration": "jour2.jpg",
+      "encarts": [
+        {
+          "symbole": "💰",
+          "titre": "Monnaie",
+          "texte": "Peu d'établissements acceptent la carte bancaire à Tofo. Prévoyez de retirer suffisamment de Meticals (MZN) à Inhambane ou à l'aéroport."
+        }
+      ]
+    },
+    {
+      "jour": 3,
+      "symbole": "🐋",
+      "titre": "Safari Océanique : à la rencontre des Géants",
+      "legende": "Embarquez pour un inoubliable 'safari océanique'. Cette sortie en bateau est votre meilleure chance de rencontrer la mégafaune marine emblématique de Tofo. Gardez les yeux bien ouverts pour apercevoir des requins-baleines, des raies Manta, des dauphins et, selon la saison, des baleines à bosse. Une expérience qui restera gravée dans votre mémoire.",
+      "lieu": "Tofo (Océan Indien)",
+      "activites": [
+        "🚤: <strong>Safari Océanique</strong>: Partez en bateau semi-rigide à la recherche des requins-baleines et des raies Manta, les emblèmes de Tofo.",
+        "🏊: <strong>Snorkeling avec la mégafaune</strong>: Si les conditions le permettent, mettez-vous à l'eau pour nager aux côtés de ces doux géants, une expérience unique et respectueuse."
+      ],
+      "illustration": "jour3.jpg",
+      "encarts": [
+        {
+          "symbole": "🌿",
+          "titre": "Tourisme Responsable",
+          "texte": "Choisissez un opérateur qui respecte une charte d'approche des animaux marins. Ne touchez jamais les animaux et gardez une distance de sécurité."
+        }
+      ]
+    },
+    {
+      "jour": 4,
+      "symbole": "🤿",
+      "titre": "Plongée sur les Récifs de Manta",
+      "legende": "Tofo est une destination de plongée de renommée mondiale, et aujourd'hui vous allez comprendre pourquoi. Mettez le cap sur l'un des célèbres sites de plongée comme 'Manta Reef' ou 'Giants Castle'. Vous y découvrirez une biodiversité incroyable et les fameuses stations de nettoyage pour les majestueuses raies Manta.",
+      "lieu": "Tofo (Sites de plongée)",
+      "activites": [
+        "🤿: <strong>Double plongée sous-marine</strong>: Explorez deux des sites de renommée mondiale pour observer les raies Manta géantes et une vie récifale foisonnante.",
+        "🧘: <strong>Après-midi détente</strong>: Reposez-vous sur la plage ou profitez d'un massage pour récupérer de vos émotions matinales."
+      ],
+      "illustration": "jour4.jpg",
+      "encarts": [
+        {
+          "symbole": "🎓",
+          "titre": "Niveau de plongée",
+          "texte": "Les plongées à Tofo peuvent être exigeantes (mises à l'eau, courant). Une certification Advanced Open Water est souvent recommandée pour les meilleurs sites."
+        }
+      ]
+    },
+    {
+      "jour": 5,
+      "symbole": "⛵",
+      "titre": "Échappée à Inhambane",
+      "legende": "Faites un voyage dans le temps en visitant la ville historique d'Inhambane. Traversez la baie à bord d'un dhow traditionnel, une expérience authentique en soi. Flânez dans ses rues à l'architecture coloniale et découvrez une autre facette de la culture mozambicaine, loin de l'ambiance de plage de Tofo.",
+      "lieu": "Inhambane",
+      "activites": [
+        "⛵: <strong>Traversée en Dhow traditionnel</strong>: Naviguez sur la baie d'Inhambane à bord d'une embarcation à voile traditionnelle pour une expérience authentique et paisible.",
+        "🏛️: <strong>Visite du centre historique d'Inhambane</strong>: Admirez l'architecture coloniale portugaise et visitez le marché central animé de la ville pour sentir son pouls."
+      ],
+      "illustration": "jour5.jpg",
+      "encarts": [
+        {
+          "symbole": "💡",
+          "titre": "Astuce",
+          "texte": "Négociez le prix de la traversée en dhow avant d'embarquer. Le trajet est plus agréable à marée haute."
+        }
+      ]
+    },
+    {
+      "jour": 6,
+      "symbole": "🏄",
+      "titre": "Vagues et Falaises à Tofinho",
+      "legende": "Découvrez Tofinho, la petite sœur plus sauvage de Tofo. Réputée pour ses vagues puissantes et ses falaises spectaculaires, c'est un paradis pour les surfeurs et les amateurs de vues panoramiques. Que vous soyez sur une planche ou simple spectateur, l'énergie du lieu est captivante et vivifiante.",
+      "lieu": "Tofinho",
+      "activites": [
+        "🏄: <strong>Cours de surf ou session libre</strong>: Profitez des vagues réputées de Tofinho pour vous initier au surf ou perfectionner votre style dans un cadre exceptionnel.",
+        "🚶: <strong>Balade sur les falaises</strong>: Marchez le long des falaises pour des points de vue époustouflants sur l'océan, particulièrement au lever ou au coucher du soleil."
+      ],
+      "illustration": "jour6.jpg",
+      "encarts": [
+        {
+          "symbole": "🌊",
+          "titre": "Surf",
+          "texte": "Le spot de Tofinho est plus adapté aux surfeurs intermédiaires à confirmés. Pour les débutants, la plage principale de Tofo est plus accessible."
+        }
+      ]
+    },
+    {
+      "jour": 7,
+      "symbole": "🥥",
+      "titre": "Journée Douceur de Vivre",
+      "legende": "Aujourd'hui, profitez de Tofo à votre propre rythme. Lisez un livre dans un hamac, essayez un cours de yoga face à l'océan, ou ne faites simplement rien du tout. C'est une journée pour recharger les batteries, savourer l'instant présent et laisser la magie de 'l'Afrique qui sourit' opérer.",
+      "lieu": "Tofo",
+      "activites": [
+        "🧘: <strong>Cours de yoga face à l'océan</strong>: Participez à une session de yoga pour étirer vos muscles et apaiser votre esprit au son des vagues.",
+        "🍹: <strong>Cocktail au coucher du soleil</strong>: Sirotez une '2M' (bière locale) ou une caïpirinha dans un bar de plage en admirant le spectacle du soleil couchant."
+      ],
+      "illustration": "jour7.jpg",
+      "encarts": [
+        {
+          "symbole": "🍻",
+          "titre": "Boissons locales",
+          "texte": "Goûtez au 'Tipo Tinto', un rhum local souvent servi avec du jus de framboise, la boisson emblématique des voyageurs à Tofo."
+        }
+      ]
+    },
+    {
+      "jour": 8,
+      "symbole": "🛶",
+      "titre": "Lagon et Mangrove de Barra",
+      "legende": "Explorez les eaux plus calmes de la péninsule de Barra, à quelques kilomètres de Tofo. Le lagon tranquille est parfait pour le kayak ou le stand-up paddle. Découvrez l'écosystème vital de la mangrove, une véritable nurserie pour de nombreuses espèces marines, offrant un contraste saisissant avec l'océan ouvert.",
+      "lieu": "Praia da Barra",
+      "activites": [
+        "🛶: <strong>Kayak dans la mangrove</strong>: Pagayez en silence à travers les méandres de la mangrove pour observer les oiseaux et la faune aquatique dans leur habitat naturel.",
+        "🐠: <strong>Snorkeling dans le lagon de Barra</strong>: Explorez les fonds marins peu profonds du lagon, idéals pour observer des hippocampes et de petits poissons colorés."
+      ],
+      "illustration": "jour8.jpg",
+      "encarts": [
+        {
+          "symbole": "🦀",
+          "titre": "Écosystème fragile",
+          "texte": "La mangrove est un milieu sensible. Ne laissez aucune trace de votre passage et ne touchez à rien pour préserver cet environnement crucial."
+        }
+      ]
+    },
+    {
+      "jour": 9,
+      "symbole": "🌊",
+      "titre": "Seconde Chance avec les Géants",
+      "legende": "L'océan est imprévisible et chaque sortie est différente. Cette journée offre une seconde chance de plonger sur un nouveau site ou de repartir en safari océanique. Vous pourriez voir quelque chose de complètement nouveau ou vivre une rencontre encore plus intense que la première fois. La nature a toujours des surprises en réserve.",
+      "lieu": "Tofo (Océan Indien)",
+      "activites": [
+        "🤿: <strong>Plongée d'exploration</strong>: Choisissez un site de plongée différent pour découvrir une autre facette des fonds marins de Tofo, comme des canyons ou des pinacles rocheux.",
+        "🌅: <strong>Dîner communautaire dans un lodge</strong>: Partagez vos aventures de la journée avec d'autres voyageurs autour d'un barbecue de poisson frais."
+      ],
+      "illustration": "jour9.jpg",
+      "encarts": [
+        {
+          "symbole": "💬",
+          "titre": "Partage",
+          "texte": "Les soirées dans les lodges sont d'excellentes occasions pour échanger des bons plans et des récits de voyage avec des passionnés du monde entier."
+        }
+      ]
+    },
+    {
+      "jour": 10,
+      "symbole": "🛵",
+      "titre": "Aventure dans l'Arrière-Pays",
+      "legende": "Quittez la côte pour quelques heures et explorez l'intérieur des terres en quad. Traversez des cocoteraies, visitez de petits villages locaux et ayez un aperçu de la vie quotidienne du peuple mozambicain, au-delà du centre touristique. C'est une immersion culturelle autant qu'une aventure motorisée.",
+      "lieu": "Arrière-pays de Tofo",
+      "activites": [
+        "🛵: <strong>Randonnée en quad</strong>: Suivez les pistes de sable à travers les palmeraies et les villages pour une dose d'aventure et de découverte culturelle.",
+        "🛍️: <strong>Derniers achats au marché</strong>: Retournez au marché de Tofo pour acheter des souvenirs uniques comme des 'capulanas' ou des sculptures en bois."
+      ],
+      "illustration": "jour10.jpg",
+      "encarts": [
+        {
+          "symbole": "🤝",
+          "titre": "Respect",
+          "texte": "Lorsque vous visitez des villages, soyez respectueux, demandez la permission avant de prendre des photos des personnes et privilégiez les sourires aux appareils photo."
+        }
+      ]
+    },
+    {
+      "jour": 11,
+      "symbole": "☀️",
+      "titre": "Dernier Bain de Soleil",
+      "legende": "Profitez de votre dernière journée complète dans ce petit coin de paradis. Une dernière baignade dans les eaux chaudes de l'océan Indien, un dernier repas délicieux, et un moment pour vous remémorer toutes les expériences incroyables du voyage. Il est temps de dire 'até logo' (à bientôt) à Tofo.",
+      "lieu": "Tofo",
+      "activites": [
+        "🏊: <strong>Dernière baignade et farniente</strong>: Profitez une dernière fois de la magnifique plage de Tofo pour vous détendre avant le long voyage du retour.",
+        "📸: <strong>Séance photo souvenir</strong>: Immortalisez les paysages et les sourires pour garder une trace de ce voyage exceptionnel."
+      ],
+      "illustration": "jour11.jpg",
+      "encarts": [
+        {
+          "symbole": "💌",
+          "titre": "Souvenirs",
+          "texte": "Pensez à noter les adresses de vos restaurants et lodges préférés pour les recommander à vos amis ou pour votre prochain voyage !"
+        }
+      ]
+    },
+    {
+      "jour": 12,
+      "symbole": "🛫",
+      "titre": "Départ de Tofo",
+      "legende": "C'est l'heure du retour. Après un dernier petit-déjeuner mozambicain, vous serez transféré à l'aéroport d'Inhambane pour votre vol de retour. Vous repartez la tête pleine de souvenirs inoubliables de requins-baleines, de raies Manta et de l'accueil chaleureux du peuple mozambicain.",
+      "lieu": "Tofo / Inhambane",
+      "activites": [
+        "🚗: <strong>Transfert vers l'aéroport d'Inhambane</strong>: Prenez la route pour l'aéroport en fonction de l'horaire de votre vol.",
+        "🛫: <strong>Vol retour vers Paris</strong>: Embarquez pour votre voyage de retour, la tête remplie de souvenirs marins."
+      ],
+      "illustration": "jour12.jpg",
+      "encarts": [
+        {
+          "symbole": "✈️",
+          "titre": "Aéroport",
+          "texte": "L'aéroport d'Inhambane est petit. Arrivez environ 2 heures avant votre vol, ce qui est amplement suffisant."
+        }
+      ]
+    }
+  ],
+  "periodes_ideales": [
+    {
+      "titre": "Les périodes idéales sont la saison sèche de Mai à Octobre, et plus particulièrement Septembre et Octobre pour maximiser les chances de voir baleines à bosse et requins-baleines.",
+      "symbole": "☀️"
+    }
+  ],
+  "infos_pratiques": [
+    {
+      "titre": "Climat tropical. Prévoir vêtements légers, maillot de bain, protection solaire et un lainage pour les soirées parfois plus fraîches.",
+      "symbole": "☀️"
+    },
+    {
+      "titre": "La monnaie est le Metical (MZN). Distributeurs rares à Tofo, il est conseillé de retirer de l'argent liquide à l'aéroport ou à Inhambane.",
+      "symbole": "💳"
+    },
+    {
+      "titre": "Traitement antipaludéen fortement recommandé et répulsif anti-moustiques indispensable. Consultez votre médecin avant le départ.",
+      "symbole": "⚕️"
+    },
+    {
+      "titre": "Visa obligatoire pour les ressortissants français. Vérifiez les conditions d'obtention (e-visa, à l'arrivée ou à l'ambassade) avant votre voyage.",
+      "symbole": "🛂"
+    }
+  ],
+  "liens_utiles": [
+    {
+      "legende": "Conseils aux voyageurs du gouvernement",
+      "titre": "France Diplomatie - Mozambique",
+      "url": "https://www.diplomatie.gouv.fr/fr/conseils-aux-voyageurs/conseils-par-pays-destination/mozambique/",
+      "symbole": "🛂"
+    },
+    {
+      "legende": "Informations plongée et safaris",
+      "titre": "Peri-Peri Divers Tofo",
+      "url": "https://www.peri-peridivers.com/",
+      "symbole": "🤿"
+    },
+    {
+      "legende": "Guide de voyage et inspirations",
+      "titre": "Lonely Planet Mozambique",
+      "url": "https://www.lonelyplanet.com/mozambique",
+      "symbole": "📘"
+    }
+  ]
+}
