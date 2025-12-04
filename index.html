@@ -1,0 +1,608 @@
+
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tofo, le Sanctuaire des Géants Marins </title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        template: {
+                            sable: '#F3E5AB',
+                            ocre: '#C66B3D',
+                            roche: '#2D2A26',
+                            ciel: '#4A6C6F',
+                            bg: '#FAFAF9'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { overflow-x: hidden; }
+        
+        /* Ligne verticale de la timeline */
+        .timeline-line {
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #E5E7EB;
+            z-index: 0;
+        }
+        @media (min-width: 768px) {
+            .timeline-line { left: 50%; margin-left: -1px; }
+        }
+
+        /* Style des cartes Info */
+        .tip-card {
+            border-left: 4px solid #C66B3D;
+            background-color: #FFF7ED;
+        }
+
+        /* Masquer la scrollbar de la nav mobile tout en gardant le scroll */
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-template-bg text-template-roche antialiased">
+
+    <nav id="nav-desktop" class="hidden md:flex fixed top-0 w-full z-50 bg-white/90 backdrop-blur border-b border-gray-200 py-4 px-8 justify-between items-center shadow-sm transition-transform duration-300 -translate-y-full">
+        <a href="#top" class="text-xl font-serif font-bold tracking-widest text-template-roche">Tofo, le Sanctuaire des Géants Marins</a>
+        <div class="space-x-6 text-sm font-bold text-gray-600">
+            <a href="#jour-1" class="nav-item-desktop hover:text-template-ocre transition">Le Parcours</a>
+            <a href="#pratique" class="nav-item-desktop hover:text-template-ocre transition">Infos Pratiques</a>
+        </div>
+    </nav>
+
+    <nav id="nav-mobile" class="md:hidden fixed top-0 w-full z-50 bg-white/95 backdrop-blur border-b border-gray-200 py-3 pl-4 overflow-x-auto hide-scroll whitespace-nowrap shadow-md transition-transform duration-300 -translate-y-full">
+        <div class="flex space-x-2 pr-4" id="mobile-menu-container">
+            <a href="#top" class="inline-block px-3 py-1 bg-template-roche text-white rounded-full text-xs font-bold shadow-sm">Top</a>
+            
+                <a href="#jour-1" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J1 Arrivée au Paradis de Tofo</a>
+            
+                <a href="#jour-2" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J2 Immersion et Saveurs Locales</a>
+            
+                <a href="#jour-3" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J3 Safari Océanique : à la rencontre des Géants</a>
+            
+                <a href="#jour-4" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J4 Plongée sur les Récifs de Manta</a>
+            
+                <a href="#jour-5" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J5 Échappée à Inhambane</a>
+            
+                <a href="#jour-6" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J6 Vagues et Falaises à Tofinho</a>
+            
+                <a href="#jour-7" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J7 Journée Douceur de Vivre</a>
+            
+                <a href="#jour-8" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J8 Lagon et Mangrove de Barra</a>
+            
+                <a href="#jour-9" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J9 Seconde Chance avec les Géants</a>
+            
+                <a href="#jour-10" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J10 Aventure dans l'Arrière-Pays</a>
+            
+                <a href="#jour-11" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J11 Dernier Bain de Soleil</a>
+            
+                <a href="#jour-12" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J12 Départ de Tofo</a>
+            
+            <a href="#pratique" class="mobile-link inline-block px-3 py-1 border border-gray-300 text-gray-500 rounded-full text-xs font-bold">Infos</a>
+        </div>
+    </nav>
+
+    <header id="top" class="relative h-[85vh] flex items-center justify-center overflow-hidden pt-12 md:pt-0">
+        
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+
+        <video autoplay muted loop playsinline 
+               poster="https://images.unsplash.com/photo-1579606946838-6db34433f3c0?q=80&w=2070"
+               class="absolute inset-0 w-full h-full object-cover">
+            <source src="https://videos.pexels.com/video-files/4456988/4456988-hd_1920_1080_25fps.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+        
+        <div class="relative z-20 text-center text-white px-4 max-w-3xl animate-fade-in-up">
+            <p class="font-sans text-template-sable tracking-[0.3em] mb-4 uppercase text-sm font-semibold">Feuille de Route</p>
+            <h1 class="font-Playfair italic text-5xl md:text-8xl mb-6 leading-tight drop-shadow-lg">Tofo</h1>
+            <p class="font-sans text-lg md:text-xl text-gray-100 mb-10 font-light max-w-2xl mx-auto leading-relaxed">Tofo, le Sanctuaire des Géants Marins</p>
+            
+            <div class="flex flex-wrap justify-center gap-4 text-sm font-bold mb-10">
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">🗓️ 12 jours</span>
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">💰 2600€ / pers</span>
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">🛬 Environ 16h à 20h avec escale(s) depuis Paris</span>
+            </div>
+
+        </div>
+    </header>
+
+    <section id="itineraire" class="max-w-6xl mx-auto px-4 py-20 relative">
+        
+        <div class="text-center mb-16">
+            <span class="text-template-ocre font-bold tracking-widest text-xs uppercase">Le Roadtrip</span>
+            <h2 class="font-serif text-4xl mt-2 text-template-roche">Votre Programme</h2>
+        </div>
+
+        <div class="relative">
+            <div class="timeline-line"></div>
+            
+            
+                <div id="jour-1" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 1</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Arrivée au Paradis de Tofo</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Après un long voyage, vous atterrissez à Inhambane, la porte d'entrée de Tofo. Un court transfert vous mènera à votre lodge où le reste de la journée est consacré à l'installation. Sentez le sable chaud sous vos pieds et imprégnez-vous de l'atmosphère décontractée de ce légendaire village de pêcheurs pour une arrivée tout en douceur.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🛬: <strong>Arrivée à l'aéroport d'Inhambane (INH)</strong>: Récupérez vos bagages et passez les formalités d'entrée au Mozambique.</li>
+                            
+                                <li>🚗: <strong>Transfert et installation à Tofo</strong>: Un court trajet en taxi ou en 'chapa' (minibus local) vous mènera à votre hébergement face à l'océan.</li>
+                            
+                                <li>🌅: <strong>Premiers pas sur la plage de Tofo</strong>: Dégourdissez-vous les jambes avec une balade au coucher du soleil pour une première immersion dans la magie des lieux.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Tofo/main/jour1.jpg" class="w-full h-64 object-cover" alt="Jour 1">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">ℹ️ À savoir</p>
+                                <p class="text-gray-700">Le visa peut souvent être obtenu à l'arrivée à l'aéroport d'Inhambane, mais vérifiez les conditions avant de partir. Ayez des dollars US ou des Rands sud-africains pour le paiement.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-2" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 2</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Immersion et Saveurs Locales</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Cette journée est dédiée à l'acclimatation. Explorez le petit marché vibrant de Tofo, goûtez aux saveurs locales et laissez le rythme doux de la vie mozambicaine vous envahir. C'est la manière parfaite de se préparer pour les aventures aquatiques à venir, en découvrant le cœur battant du village.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🛍️: <strong>Exploration du marché de Tofo</strong>: Découvrez l'artisanat local, les tissus colorés 'capulanas' et dégustez des fruits tropicaux frais comme la mangue ou l'ananas.</li>
+                            
+                                <li>🍽️: <strong>Déjeuner de fruits de mer frais</strong>: Savourez un plat de crevettes grillées ou de poisson du jour dans l'un des restaurants de plage, les pieds dans le sable.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Tofo/main/jour2.jpg" class="w-full h-64 object-cover" alt="Jour 2">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">💰 Monnaie</p>
+                                <p class="text-gray-700">Peu d'établissements acceptent la carte bancaire à Tofo. Prévoyez de retirer suffisamment de Meticals (MZN) à Inhambane ou à l'aéroport.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-3" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 3</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Safari Océanique : à la rencontre des Géants</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Embarquez pour un inoubliable 'safari océanique'. Cette sortie en bateau est votre meilleure chance de rencontrer la mégafaune marine emblématique de Tofo. Gardez les yeux bien ouverts pour apercevoir des requins-baleines, des raies Manta, des dauphins et, selon la saison, des baleines à bosse. Une expérience qui restera gravée dans votre mémoire.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🚤: <strong>Safari Océanique</strong>: Partez en bateau semi-rigide à la recherche des requins-baleines et des raies Manta, les emblèmes de Tofo.</li>
+                            
+                                <li>🏊: <strong>Snorkeling avec la mégafaune</strong>: Si les conditions le permettent, mettez-vous à l'eau pour nager aux côtés de ces doux géants, une expérience unique et respectueuse.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Tofo/main/jour3.jpg" class="w-full h-64 object-cover" alt="Jour 3">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🌿 Tourisme Responsable</p>
+                                <p class="text-gray-700">Choisissez un opérateur qui respecte une charte d'approche des animaux marins. Ne touchez jamais les animaux et gardez une distance de sécurité.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-4" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 4</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Plongée sur les Récifs de Manta</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Tofo est une destination de plongée de renommée mondiale, et aujourd'hui vous allez comprendre pourquoi. Mettez le cap sur l'un des célèbres sites de plongée comme 'Manta Reef' ou 'Giants Castle'. Vous y découvrirez une biodiversité incroyable et les fameuses stations de nettoyage pour les majestueuses raies Manta.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🤿: <strong>Double plongée sous-marine</strong>: Explorez deux des sites de renommée mondiale pour observer les raies Manta géantes et une vie récifale foisonnante.</li>
+                            
+                                <li>🧘: <strong>Après-midi détente</strong>: Reposez-vous sur la plage ou profitez d'un massage pour récupérer de vos émotions matinales.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Tofo/main/jour4.jpg" class="w-full h-64 object-cover" alt="Jour 4">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🎓 Niveau de plongée</p>
+                                <p class="text-gray-700">Les plongées à Tofo peuvent être exigeantes (mises à l'eau, courant). Une certification Advanced Open Water est souvent recommandée pour les meilleurs sites.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-5" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 5</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Échappée à Inhambane</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Faites un voyage dans le temps en visitant la ville historique d'Inhambane. Traversez la baie à bord d'un dhow traditionnel, une expérience authentique en soi. Flânez dans ses rues à l'architecture coloniale et découvrez une autre facette de la culture mozambicaine, loin de l'ambiance de plage de Tofo.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>⛵: <strong>Traversée en Dhow traditionnel</strong>: Naviguez sur la baie d'Inhambane à bord d'une embarcation à voile traditionnelle pour une expérience authentique et paisible.</li>
+                            
+                                <li>🏛️: <strong>Visite du centre historique d'Inhambane</strong>: Admirez l'architecture coloniale portugaise et visitez le marché central animé de la ville pour sentir son pouls.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Tofo/main/jour5.jpg" class="w-full h-64 object-cover" alt="Jour 5">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">💡 Astuce</p>
+                                <p class="text-gray-700">Négociez le prix de la traversée en dhow avant d'embarquer. Le trajet est plus agréable à marée haute.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-6" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 6</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Vagues et Falaises à Tofinho</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Découvrez Tofinho, la petite sœur plus sauvage de Tofo. Réputée pour ses vagues puissantes et ses falaises spectaculaires, c'est un paradis pour les surfeurs et les amateurs de vues panoramiques. Que vous soyez sur une planche ou simple spectateur, l'énergie du lieu est captivante et vivifiante.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🏄: <strong>Cours de surf ou session libre</strong>: Profitez des vagues réputées de Tofinho pour vous initier au surf ou perfectionner votre style dans un cadre exceptionnel.</li>
+                            
+                                <li>🚶: <strong>Balade sur les falaises</strong>: Marchez le long des falaises pour des points de vue époustouflants sur l'océan, particulièrement au lever ou au coucher du soleil.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Tofo/main/jour6.jpg" class="w-full h-64 object-cover" alt="Jour 6">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🌊 Surf</p>
+                                <p class="text-gray-700">Le spot de Tofinho est plus adapté aux surfeurs intermédiaires à confirmés. Pour les débutants, la plage principale de Tofo est plus accessible.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-7" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 7</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Journée Douceur de Vivre</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Aujourd'hui, profitez de Tofo à votre propre rythme. Lisez un livre dans un hamac, essayez un cours de yoga face à l'océan, ou ne faites simplement rien du tout. C'est une journée pour recharger les batteries, savourer l'instant présent et laisser la magie de 'l'Afrique qui sourit' opérer.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🧘: <strong>Cours de yoga face à l'océan</strong>: Participez à une session de yoga pour étirer vos muscles et apaiser votre esprit au son des vagues.</li>
+                            
+                                <li>🍹: <strong>Cocktail au coucher du soleil</strong>: Sirotez une '2M' (bière locale) ou une caïpirinha dans un bar de plage en admirant le spectacle du soleil couchant.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Tofo/main/jour7.jpg" class="w-full h-64 object-cover" alt="Jour 7">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🍻 Boissons locales</p>
+                                <p class="text-gray-700">Goûtez au 'Tipo Tinto', un rhum local souvent servi avec du jus de framboise, la boisson emblématique des voyageurs à Tofo.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-8" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 8</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Lagon et Mangrove de Barra</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Explorez les eaux plus calmes de la péninsule de Barra, à quelques kilomètres de Tofo. Le lagon tranquille est parfait pour le kayak ou le stand-up paddle. Découvrez l'écosystème vital de la mangrove, une véritable nurserie pour de nombreuses espèces marines, offrant un contraste saisissant avec l'océan ouvert.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🛶: <strong>Kayak dans la mangrove</strong>: Pagayez en silence à travers les méandres de la mangrove pour observer les oiseaux et la faune aquatique dans leur habitat naturel.</li>
+                            
+                                <li>🐠: <strong>Snorkeling dans le lagon de Barra</strong>: Explorez les fonds marins peu profonds du lagon, idéals pour observer des hippocampes et de petits poissons colorés.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Tofo/main/jour8.jpg" class="w-full h-64 object-cover" alt="Jour 8">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🦀 Écosystème fragile</p>
+                                <p class="text-gray-700">La mangrove est un milieu sensible. Ne laissez aucune trace de votre passage et ne touchez à rien pour préserver cet environnement crucial.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-9" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 9</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Seconde Chance avec les Géants</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">L'océan est imprévisible et chaque sortie est différente. Cette journée offre une seconde chance de plonger sur un nouveau site ou de repartir en safari océanique. Vous pourriez voir quelque chose de complètement nouveau ou vivre une rencontre encore plus intense que la première fois. La nature a toujours des surprises en réserve.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🤿: <strong>Plongée d'exploration</strong>: Choisissez un site de plongée différent pour découvrir une autre facette des fonds marins de Tofo, comme des canyons ou des pinacles rocheux.</li>
+                            
+                                <li>🌅: <strong>Dîner communautaire dans un lodge</strong>: Partagez vos aventures de la journée avec d'autres voyageurs autour d'un barbecue de poisson frais.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Tofo/main/jour9.jpg" class="w-full h-64 object-cover" alt="Jour 9">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">💬 Partage</p>
+                                <p class="text-gray-700">Les soirées dans les lodges sont d'excellentes occasions pour échanger des bons plans et des récits de voyage avec des passionnés du monde entier.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-10" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 10</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Aventure dans l'Arrière-Pays</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Quittez la côte pour quelques heures et explorez l'intérieur des terres en quad. Traversez des cocoteraies, visitez de petits villages locaux et ayez un aperçu de la vie quotidienne du peuple mozambicain, au-delà du centre touristique. C'est une immersion culturelle autant qu'une aventure motorisée.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🛵: <strong>Randonnée en quad</strong>: Suivez les pistes de sable à travers les palmeraies et les villages pour une dose d'aventure et de découverte culturelle.</li>
+                            
+                                <li>🛍️: <strong>Derniers achats au marché</strong>: Retournez au marché de Tofo pour acheter des souvenirs uniques comme des 'capulanas' ou des sculptures en bois.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Tofo/main/jour10.jpg" class="w-full h-64 object-cover" alt="Jour 10">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🤝 Respect</p>
+                                <p class="text-gray-700">Lorsque vous visitez des villages, soyez respectueux, demandez la permission avant de prendre des photos des personnes et privilégiez les sourires aux appareils photo.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-11" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 11</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Dernier Bain de Soleil</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Profitez de votre dernière journée complète dans ce petit coin de paradis. Une dernière baignade dans les eaux chaudes de l'océan Indien, un dernier repas délicieux, et un moment pour vous remémorer toutes les expériences incroyables du voyage. Il est temps de dire 'até logo' (à bientôt) à Tofo.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🏊: <strong>Dernière baignade et farniente</strong>: Profitez une dernière fois de la magnifique plage de Tofo pour vous détendre avant le long voyage du retour.</li>
+                            
+                                <li>📸: <strong>Séance photo souvenir</strong>: Immortalisez les paysages et les sourires pour garder une trace de ce voyage exceptionnel.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Tofo/main/jour11.jpg" class="w-full h-64 object-cover" alt="Jour 11">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">💌 Souvenirs</p>
+                                <p class="text-gray-700">Pensez à noter les adresses de vos restaurants et lodges préférés pour les recommander à vos amis ou pour votre prochain voyage !</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-12" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 12</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Départ de Tofo</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">C'est l'heure du retour. Après un dernier petit-déjeuner mozambicain, vous serez transféré à l'aéroport d'Inhambane pour votre vol de retour. Vous repartez la tête pleine de souvenirs inoubliables de requins-baleines, de raies Manta et de l'accueil chaleureux du peuple mozambicain.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🚗: <strong>Transfert vers l'aéroport d'Inhambane</strong>: Prenez la route pour l'aéroport en fonction de l'horaire de votre vol.</li>
+                            
+                                <li>🛫: <strong>Vol retour vers Paris</strong>: Embarquez pour votre voyage de retour, la tête remplie de souvenirs marins.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Tofo/main/jour12.jpg" class="w-full h-64 object-cover" alt="Jour 12">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">✈️ Aéroport</p>
+                                <p class="text-gray-700">L'aéroport d'Inhambane est petit. Arrivez environ 2 heures avant votre vol, ce qui est amplement suffisant.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+    </section>
+
+    <footer id="pratique" class="bg-white border-t border-gray-200 pt-16 pb-10 scroll-mt-24">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 mb-12">
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2">
+                    <span>☀️</span> Périodes Idéales
+                </h4>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed">Les périodes idéales sont la saison sèche de Mai à Octobre, et plus particulièrement Septembre et Octobre pour maximiser les chances de voir baleines à bosse et requins-baleines.</p>
+                
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2">
+                    <span>🧳</span> À savoir
+                </h4>
+                <ul class="text-sm text-gray-600 space-y-3">
+
+                        <li><strong>☀️ :</strong> Climat tropical. Prévoir vêtements légers, maillot de bain, protection solaire et un lainage pour les soirées parfois plus fraîches.</li>
+                    
+                        <li><strong>💳 :</strong> La monnaie est le Metical (MZN). Distributeurs rares à Tofo, il est conseillé de retirer de l'argent liquide à l'aéroport ou à Inhambane.</li>
+                    
+                        <li><strong>⚕️ :</strong> Traitement antipaludéen fortement recommandé et répulsif anti-moustiques indispensable. Consultez votre médecin avant le départ.</li>
+                    
+                        <li><strong>🛂 :</strong> Visa obligatoire pour les ressortissants français. Vérifiez les conditions d'obtention (e-visa, à l'arrivée ou à l'ambassade) avant votre voyage.</li>
+                    
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2"><span>🔗</span> Liens Utiles</h4>
+                <ul class="text-sm space-y-3">
+                  <li><a href="https://shepper1.github.io/Tofo/map.html" target="_blank" class="hover:underline flex items-center gap-2"><strong>🗺️ Carte</strong></a></li>
+                    
+                        <li><a href="https://www.diplomatie.gouv.fr/fr/conseils-aux-voyageurs/conseils-par-pays-destination/mozambique/" target="_blank" class="hover:underline flex items-center gap-2"><strong>🛂 France Diplomatie - Mozambique</strong></a></li>
+                    
+                        <li><a href="https://www.peri-peridivers.com/" target="_blank" class="hover:underline flex items-center gap-2"><strong>🤿 Peri-Peri Divers Tofo</strong></a></li>
+                    
+                        <li><a href="https://www.lonelyplanet.com/mozambique" target="_blank" class="hover:underline flex items-center gap-2"><strong>📘 Lonely Planet Mozambique</strong></a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="text-center border-t border-gray-100 pt-8">
+            <p class="font-serif text-2xl text-template-roche mb-2">Tofo</p>
+            <p class="text-xs text-gray-400">© 2025 - Roadmap</p>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Gestion de l'affichage du menu au scroll
+        const navDesktop = document.getElementById('nav-desktop');
+        const navMobile = document.getElementById('nav-mobile');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                navDesktop.classList.remove('-translate-y-full');
+                navMobile.classList.remove('-translate-y-full');
+            } else {
+                navDesktop.classList.add('-translate-y-full');
+                navMobile.classList.add('-translate-y-full');
+            }
+        });
+
+        // 2. Détection de l'étape active
+        const observerOptions = {
+            root: null,
+            rootMargin: '-40% 0px -60% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const activeId = entry.target.id;
+                    
+                    document.querySelectorAll('.mobile-link').forEach(link => {
+                        const linkHref = link.getAttribute('href').substring(1);
+                        if (linkHref === activeId) {
+                            link.classList.remove('bg-gray-100', 'text-gray-700');
+                            link.classList.add('bg-template-ocre', 'text-white', 'shadow-md');
+                            link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                        } else {
+                            link.classList.add('bg-gray-100', 'text-gray-700');
+                            link.classList.remove('bg-template-ocre', 'text-white', 'shadow-md');
+                        }
+                    });
+
+                    document.querySelectorAll('.nav-item-desktop').forEach(link => {
+                        const linkHref = link.getAttribute('href').substring(1);
+                        if (activeId.includes('jour') && linkHref === 'jour-1') {
+                            link.classList.add('text-template-ocre');
+                        } else if (activeId === 'pratique' && linkHref === 'pratique') {
+                            link.classList.add('text-template-ocre');
+                        } else {
+                            link.classList.remove('text-template-ocre');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('div[id^="jour-"], footer#pratique').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
